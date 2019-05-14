@@ -30,6 +30,8 @@ RUN apt-get update
 # Added so we can install 6.x branch of nodejs.
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 
+RUN apt-get update
+
 # Install packages.
 RUN apt-get install -y \
     vim \
