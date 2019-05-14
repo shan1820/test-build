@@ -1,10 +1,10 @@
 ############################################################
 # Dockerfile to build WCMS container images
-# Based on Ubuntu Xenial
+# Based on Ubuntu Bionic
 ############################################################
 
 # Set the base image to Ubuntu
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 # Allows installing of packages without prompting the user to answer any questions
 ENV DEBIAN_FRONTEND noninteractive
@@ -51,7 +51,6 @@ RUN apt-get install -y \
     php-pear \
     libapache2-mod-php5.6 \
     optipng \
-    pdftk \
     jpegoptim \
     imagemagick \
     libapache2-mod-fcgid \
@@ -66,6 +65,12 @@ RUN apt-get install -y \
     nodejs \
     dos2unix \
     supervisor
+
+## pdftk is no longer part of Ubuntu 18.04 repo to add it:
+RUN wget http://ftp.br.debian.org/debian/pool/main/p/pdftk/pdftk_2.02-4+b2_amd64.deb && \ 
+    wget http://ftp.br.debian.org/debian/pool/main/g/gcc-defaults/libgcj-common_6.3-4_all.deb && \ 
+    wget http://ftp.br.debian.org/debian/pool/main/g/gcc-6/libgcj17_6.3.0-18+deb9u1_amd64.deb && \ 
+    dpkg -i pdftk_2.02-4+b2_amd64.deb libgcj17_6.3.0-18+deb9u1_amd64.deb libgcj-common_6.3-4_all.deb
 
 RUN apt-get clean
 
