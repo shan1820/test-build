@@ -53,7 +53,6 @@ RUN apt-get install -y \
     optipng \
     jpegoptim \
     imagemagick \
-    libapache2-mod-fastcgi \
     curl \
     nano \
     mysql-client \
@@ -104,7 +103,6 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
 
 ## Enable apache mods
-RUN a2enmod proxy_fcgi setenvif
 RUN a2enconf php5.6-fpm
 RUN service php5.6-fpm restart
 
