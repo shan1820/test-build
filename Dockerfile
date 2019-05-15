@@ -81,9 +81,6 @@ RUN a2enmod ssl
 ## for Content Security Policy (CSP).
 RUN a2enmod headers
 
-## fcgid needed to run multiple versions of PHP under the same apache.
-## RUN a2enmod fcgid
-
 ## enable mcrypt
 RUN phpenmod mcrypt
 
