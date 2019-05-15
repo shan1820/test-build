@@ -53,7 +53,6 @@ RUN apt-get install -y \
     optipng \
     jpegoptim \
     imagemagick \
-    libapache2-mod-fcgid \
     libapache2-mod-fastcgi \
     curl \
     nano \
