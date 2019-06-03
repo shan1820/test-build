@@ -63,6 +63,7 @@ RUN apt-get install -y \
     nodejs=6.14.1-1nodesource1 \
     dos2unix \
     supervisor \
+    sudo \
     gcc-6-base \
     libasound2
 
