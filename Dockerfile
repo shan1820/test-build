@@ -92,12 +92,6 @@ RUN apt-get install php-uploadprogress
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-# Install Drush 8.
-RUN composer global require drush/drush:8.*
-RUN composer global update
-# Unfortunately, adding the composer vendor dir to the PATH doesn't seem to work. So:
-RUN ln -s /root/.composer/vendor/bin/drush /usr/local/bin/drush
-
 # Manually set up the apache environment variables
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
