@@ -102,6 +102,3 @@ ENV APACHE_PID_FILE /var/run/apache2.pid
 ## Make sure we are running php we selected
 RUN update-alternatives --set php /usr/bin/php5.6
 RUN a2enmod php5.6
-
-## Install the drush registry_rebuild module
-RUN drush @none dl registry_rebuild-7.x
