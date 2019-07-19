@@ -79,7 +79,7 @@ RUN apt-get clean
 RUN a2enmod rewrite \
     ssl \
     proxy_http \
-    proxy_fcgi \
+    proxy_fcgi
 
 ## for Content Security Policy (CSP).
 RUN a2enmod headers
