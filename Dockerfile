@@ -76,8 +76,10 @@ RUN wget http://ftp.br.debian.org/debian/pool/main/p/pdftk/pdftk_2.02-4+b2_amd64
 RUN apt-get clean
 
 ## enable rewrite and ssl for apache2
-RUN a2enmod rewrite
-RUN a2enmod ssl
+RUN a2enmod rewrite \
+    a2enmod ssl \
+    a2enmod proxy_http \
+    a2enmod proxy_fcgi \
 
 ## for Content Security Policy (CSP).
 RUN a2enmod headers
