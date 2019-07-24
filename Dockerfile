@@ -49,6 +49,7 @@ RUN apt-get install -y \
     php5.6-mcrypt \
     php5.6-zip \
     php-pear \
+    php-xdebug \
     libapache2-mod-php5.6 \
     optipng \
     jpegoptim \
